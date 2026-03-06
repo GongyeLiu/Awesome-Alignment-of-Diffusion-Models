@@ -1,66 +1,96 @@
 # Awesome-Alignment-of-Diffusion-Models
-paper collection: alignment of diffusion models
+
+This repository is a curated collection of research papers, frameworks, and resources focusing on the **Alignment and Post-Training of Diffusion/Flow-matching Models**. 
+As image and video generative models scale, aligning them with human preferences, physical constraints, and prompt adherence has become a critical paradigm.
+
+This repository is updated continuously. We apologize for any omissions and welcome pull requests to merge them in.
 
 
+---
+
+## Table of Contents
+- [Foundation Models](#foundation-models)
+  - [Image Generation & Editing](#image-generation--editing)
+  - [Video Generation](#video-generation)
+- [Reward Model](#reward-model)
+  - [CLIP-based](#clip-based)
+  - [VLM-based](#vlm-based)
+  - [Diffusion-based](#diffusion-based)
+- [Training Alignment](#training-alignment)
+  - [ReFL](#refl)
+  - [DPO](#dpo)
+  - [RWR](#rwr)
+  - [RLHF](#rlhf)
+  - [RLHF-GRPO](#rlhf-grpo)
+- [Inference Alignment](#inference-alignment)
+  - [Gradient Guidance](#gradient-guidance)
+  - [Condition](#condition)
+  - [Search](#search)
+- [Download Tasks](#download-tasks)
+  - [Human-centric AI & ID Preserving](#human-centric-ai--id-preserving)
+  - [Control](#control)
+  - [Long Video Generation](#long-video-generation)
+  - [Distillation](#distillation)
+  - [3D](#3d)
+- [Other surveys and analysis](#other-surveys-and-analysis)
+- [Contact & Contributions](#contact--contributions)
+
+---
 
 # Foundation Models
 
 ## Image Generation & Editing
 
-- ![DPO] Scaling Rectified Flow Transformers for High-Resolution Image Synthesis. [pdf](https://arxiv.org/pdf/2403.03206) 2024.03 (StableDiffusion 3 from Stability AI).
+- ![DPO] Scaling Rectified Flow Transformers for High-Resolution Image Synthesis. [![arXiv 24.03](https://img.shields.io/badge/arXiv-24.03-b31b1b)](https://arxiv.org/abs/2403.03206) (StableDiffusion 3 from Stability AI).
 
-- ![SFT] SANA 1.5: Efficient Scaling of Training-Time and Inference-Time Compute in Linear Diffusion Transformer [pdf](https://arxiv.org/pdf/2501.18427) 2025.01 (from NVIDIA)
+- ![SFT] SANA 1.5: Efficient Scaling of Training-Time and Inference-Time Compute in Linear Diffusion Transformer [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.18427) (from NVIDIA)
 
-- ![SFT] ![ReFL] Seedream 2.0: A Native Chinese-English Bilingual Image
-Generation Foundation Model [pdf](https://arxiv.org/pdf/2503.07703) 2025.01 (from  ByteDance Seed Team)
+- ![SFT] ![ReFL] Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2503.07703) (from  ByteDance Seed Team)
 
-- ![SFT] ![ReFL] Seedream 3.0 Technical Report [pdf](https://arxiv.org/pdf/2504.11346) 2025.04 (from ByteDance Seed Team)
+- ![SFT] ![ReFL] Seedream 3.0 Technical Report [![arXiv 25.04](https://img.shields.io/badge/arXiv-25.04-b31b1b)](https://arxiv.org/abs/2504.11346) (from ByteDance Seed Team)
 
 - ![SFT] HiDream-I1: A High-Efficient Image Generative Foundation
-Model with Sparse Diffusion Transformer. [pdf](https://arxiv.org/pdf/2505.22705) 2025.05 (from HiDream Team)
+Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.22705) (from HiDream Team)
 
+- ![SFT] ![DPO] ![GRPO] Qwen-Image Technical Report [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.02324) (from Qwen Team)
 
-- ![SFT] ![DPO] ![GRPO] Qwen-Image Technical Report [pdf](https://arxiv.org/pdf/2508.02324) 2025.08 (from Qwen Team)
+- ![SFT] ![ReFL] ![GRPO] Seedream 4.0: Toward Next-generation Multimodal Image Generation [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.20427) (from ByteDance Seed Team)
 
-- ![SFT] ![ReFL] ![GRPO] Seedream 4.0: Toward Next-generation Multimodal
-Image Generation [pdf](https://arxiv.org/pdf/2509.20427) 2025.09 (from ByteDance Seed Team)
+- ![SFT] ![DPO] ![GRPO] Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.22699) (from Alibaba Z-Image Team)
 
-- ![SFT] ![DPO] ![GRPO] Z-Image: An Efficient Image Generation Foundation Model
-with Single-Stream Diffusion Transformer [pdf](https://arxiv.org/pdf/2511.22699) 2025.11 (from Alibaba Z-Image Team)
+- ![SFT] ![DPO] ![GRPO] Ovis-Image Technical Report. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2511.22982) (from Alibaba Ovis Team)
 
-- ![SFT] ![DPO] ![GRPO] Ovis-Image Technical Report. [pdf](https://arxiv.org/pdf/2511.22982) 2025.12 (from Alibaba Ovis Team)
-
-- ![SFT] ![DPO] ![GRPO] LongCat-Image Technical Report [pdf](https://www.arxiv.org/pdf/2512.07584) 2025.12 (from Meituan LongCat Team)
+- ![SFT] ![DPO] ![GRPO] LongCat-Image Technical Report [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.07584) (from Meituan LongCat Team)
 
 
 
 ## Video Generation
 
-- ![ReFL] T2v-turbo: Breaking the quality bottleneck of video consistency model with mixed reward feedback. [pdf](https://arxiv.org/pdf/2405.18750) 2024.05
+- ![ReFL] T2v-turbo: Breaking the quality bottleneck of video consistency model with mixed reward feedback. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2405.18750)
 
-- ![SFT] Movie Gen: A Cast of Media Foundation Models. [pdf](https://ai.meta.com/static-resource/movie-gen-research-paper) 2024.10 (from Meta)
-
-
-
-- ![SFT] Cosmos World Foundation Model Platform for Physical AI.  [pdf](https://d1qx31qr3h6wln.cloudfront.net/publications/NVIDIA%20Cosmos_4.pdf) 2025.01 (from NVIDIA)
+- ![SFT] Movie Gen: A Cast of Media Foundation Models. [![arXiv 24.10](https://img.shields.io/badge/arXiv-24.10-b31b1b)](https://arxiv.org/abs/2410.13720) (from Meta)
 
 
-- ![SFT] ![DPO] Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model. [pdf](https://arxiv.org/pdf/2502.10248) 2025.02 (from Step-Video Team)
+
+- ![SFT] Cosmos World Foundation Model Platform for Physical AI.  [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.03575) (from NVIDIA)
 
 
-- ![SFT] Wan: Open and Advanced Large-Scale Video Generative Models. [pdf](https://arxiv.org/pdf/2503.20314) 2025.03 (from Alibaba Wan Team)
+- ![SFT] ![DPO] Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.10248) (from Step-Video Team)
 
-- ![SFT] ![DPO] Skyreels-v2: Infinite-length film generative model. [pdf](https://arxiv.org/pdf/2504.13074) 2025.04 (from SkyRells Team)
 
-- ![SFT] ![ReFL] Seedance 1.0: Exploring the Boundaries of Video Generation Models. [pdf](https://arxiv.org/pdf/2506.09113) 2025.06 (from ByteDance Seed Team)
+- ![SFT] Wan: Open and Advanced Large-Scale Video Generative Models. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.20314) (from Alibaba Wan Team)
 
-- ![SFT] ![GRPO] LongCat-Video Technical Report. [pdf](https://arxiv.org/pdf/2510.22200) 2025.10 (from Meituan LongCat Team)
+- ![SFT] ![DPO] Skyreels-v2: Infinite-length film generative model. [![arXiv 25.04](https://img.shields.io/badge/arXiv-25.04-b31b1b)](https://arxiv.org/abs/2504.13074) (from SkyRells Team)
 
-- ![SFT] ![GRPO] World Simulation with Video Foundation Models for Physical AI. [pdf](https://arxiv.org/pdf/2511.00062) 2025.11 (from Nvidia Cosmos Team)
+- ![SFT] ![ReFL] Seedance 1.0: Exploring the Boundaries of Video Generation Models. [![arXiv 25.06](https://img.shields.io/badge/arXiv-25.06-b31b1b)](https://arxiv.org/abs/2506.09113) (from ByteDance Seed Team)
 
-- ![SFT] ![DPO] ![GRPO] HunyuanVideo 1.5 Technical Report. [pdf](https://arxiv.org/pdf/2511.18870) 2025.11 (from Tencent Hunyuan Team)
+- ![SFT] ![GRPO] LongCat-Video Technical Report. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.22200) (from Meituan LongCat Team)
 
-- ![SFT] ![ReFL] ![GRPO] Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model. [pdf](https://arxiv.org/pdf/2512.13507) 2025.12 (from ByteDance Seed Team)
+- ![SFT] ![GRPO] World Simulation with Video Foundation Models for Physical AI. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.00062) (from Nvidia Cosmos Team)
+
+- ![SFT] ![DPO] ![GRPO] HunyuanVideo 1.5 Technical Report. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.18870) (from Tencent Hunyuan Team)
+
+- ![SFT] ![ReFL] ![GRPO] Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.13507) (from ByteDance Seed Team)
 
 
 
@@ -71,323 +101,485 @@ with Single-Stream Diffusion Transformer [pdf](https://arxiv.org/pdf/2511.22699)
 
 # Reward Model
 
+<div align=center>
+<img src="asset/reward.jpg" width="800px">
+</div>
+
 ## CLIP-based
 
-- ![image] Laion-5b: An open large-scale dataset for training next generation image-text models. [pdf](https://proceedings.neurips.cc/paper_files/paper/2022/file/a1859debfb3b59d094f3504d5ebb6c25-Paper-Datasets_and_Benchmarks.pdf) 2022.16
+
+<details>
+<summary> <b> Early Explorations about CLIP-based rewards </b></summary>
+
+---
+
+- ![image] Laion-5b: An open large-scale dataset for training next generation image-text models. [![arXiv 22.10](https://img.shields.io/badge/arXiv-22.10-b31b1b)](https://arxiv.org/abs/2210.08402)
+
+- ![image] Human Preference Score: Better Aligning Text-to-Image Models with Human Preference. [![arXiv 23.03](https://img.shields.io/badge/arXiv-23.03-b31b1b)](https://arxiv.org/abs/2303.14420)
+
+- ![image] Imagereward: Learning and evaluating human preferences for text-to-image generation. [![arXiv 23.04](https://img.shields.io/badge/arXiv-23.04-b31b1b)](https://arxiv.org/abs/2304.05977)
+
+- ![image] Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation. [![arXiv 23.05](https://img.shields.io/badge/arXiv-23.05-b31b1b)](https://arxiv.org/abs/2305.01569)
+
+- ![image] Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. [![arXiv 23.06](https://img.shields.io/badge/arXiv-23.06-b31b1b)](https://arxiv.org/abs/2306.09341)
+
+- ![image] Rich Human Feedback for Text-to-Image Generation. [![arXiv 23.12](https://img.shields.io/badge/arXiv-23.12-b31b1b)](https://arxiv.org/abs/2312.10240)
+
+- ![image] Learning Multi-dimensional Human Preference for Text-to-Image Generation. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2405.14705)
 
 
-- ![image] Human Preference Score: Better Aligning Text-to-Image Models with Human Preference. [pdf](https://arxiv.org/pdf/2303.14420) 2023.03
-
-- ![image] Imagereward: Learning and evaluating human preferences for text-to-image generation. [pdf](https://arxiv.org/pdf/2304.05977) 2023.04
-
-- ![image] Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2305.01569) 2023.05
-
-- ![image] Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. [pdf](https://arxiv.org/pdf/2306.09341) 2023.06
-
-- ![image] Rich Human Feedback for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2312.10240) 2023.12
-
-- ![image] Learning Multi-dimensional Human Preference for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2405.14705) 2024.05
-
-
-
+</details>
 
 ## VLM-based
 
-- ![image] Multimodal Large Language Models Make Text-to-Image Generative Models Align Better. [pdf](https://proceedings.neurips.cc/paper_files/paper/2024/file/9421261e06f1a63a352b068f1ac90609-Paper-Conference.pdf) 2024.05
+<details>
+<summary> <b> Regressive-based RM </b></summary>
 
-- ![video] Boosting Text-to-Video Generative Model with MLLMs Feedback. [pdf](https://openaccess.thecvf.com/content/CVPR2024/papers/Yuan_InstructVideo_Instructing_Video_Diffusion_Models_with_Human_Feedback_CVPR_2024_paper.pdf) 2024.05
+---
 
-- ![video] VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback for Video Generation. [pdf](https://arxiv.org/pdf/2406.15252) 2024.06
+- ![image] Multimodal Large Language Models Make Text-to-Image Generative Models Align Better. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2404.15100)
 
-- ![image] ![video] Visionreward: Fine-grained multi-dimensional human preference learning for image and video generation. [pdf](https://arxiv.org/pdf/2412.21059) 2024.12
+- ![video] VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback for Video Generation. [![arXiv 24.06](https://img.shields.io/badge/arXiv-24.06-b31b1b)](https://arxiv.org/abs/2406.15252)
 
-- ![video] LiFT: Leveraging Human Feedback for Text-to-Video Model Alignment. [pdf](https://arxiv.org/pdf/2412.04814) 2025.01
+- ![video] LiFT: Leveraging Human Feedback for Text-to-Video Model Alignment. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2412.04814)
 
-- ![video] Improving Video Generation with Human Feedback [pdf](https://arxiv.org/pdf/2501.13918) 2025.01
+- ![video] Improving Video Generation with Human Feedback [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.13918)
 
-- ![image] Teaching Large Language Models to Regress Accurate Image Quality Scores using Score Distribution. [pdf](https://arxiv.org/pdf/2501.11561) 2025.01
+- ![image] Teaching Large Language Models to Regress Accurate Image Quality Scores using Score Distribution. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.11561)
+
+- ![image] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation. [![arXiv 25.07](https://img.shields.io/badge/arXiv-25.07-b31b1b)](https://arxiv.org/abs/2507.21391)
+
+- ![image] HPSv3: Towards Wide-Spectrum Human Preference Score. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.03789)
+
+- ![edit] Onereward: Unified mask-guided image generation via multi-task human preference learning. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.21066)
+
+- ![image] ![video] RewardDance: Reward Scaling in Visual Generation. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.08826)
+
+- ![edit] Skywork unipic 2.0: Building kontext model with online rl for unified multimodal model. [![arXiv](https://img.shields.io/badge/arXiv-b31b1b)](https://arxiv.org/abs/2509.04548)
+
+- ![edit] Uniworld-V2: Reinforce Image Editing with Diffusion Negative-aware Finetuning and MLLM Implicit Feedback. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.16888)
+
+</details>
+
+<br>
+
+<details>
+<summary> <b> Generative / CoT-based RM </b></summary>
+
+---
+
+- ![image] ![video] Unified Reward Model for Multimodal Understanding and Generation. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.05236)
+
+- ![image] ![video] Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.03318)
+
+- ![image] VisualQuality-R1: Reasoning-Induced Image Quality Assessment via Reinforcement Learning to Rank. [![arXiv](https://img.shields.io/badge/arXiv-b31b1b)](https://arxiv.org/abs/2505.14460)
+
+- ![video] VideoScore2: Think before You Score in Generative Video Evaluation. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.22799)
+
+- ![edit] Edit-R1: Unleashing Reasoning-Based Reinforcement Learning for Image Editing. [![OpenReview 25.09](https://img.shields.io/badge/OpenReview-25.09-b31b1b)](https://openreview.net/pdf?id=hKWCGxuD5v)
+
+- ![video] Vr-thinker: Boosting video reward models through thinking-with-image reasoning. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.10518).
+
+- ![image] ![video] Unified Personalized Reward Model for Vision Generation. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.02380)
+
+- ![video] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model. [![arXiv 26.01](https://img.shields.io/badge/arXiv-26.01-b31b1b)](https://arxiv.org/abs/2601.04033)
 
 
-- ![image] ![video] Unified Reward Model for Multimodal Understanding and Generation. [pdf](https://arxiv.org/pdf/2503.05236) 2025.03
+</details>
 
-- ![image] ![video] Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning. [pdf](https://arxiv.org/pdf/2505.03318) 2025.05
+<br>
 
-- ![image] VisualQuality-R1: Reasoning-Induced Image Quality Assessment via Reinforcement Learning to Rank. [pdf](https://arxiv.org/pdf/2505.14460)
+<details>
+<summary> <b> Rubrics-based RM </b></summary>
 
-- ![image] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2507.21391) 2025.07
+---
 
-- ![image] HPSv3: Towards Wide-Spectrum Human Preference Score. [pdf](https://arxiv.org/pdf/2508.03789) 2025.08
+- ![image] ![video] Visionreward: Fine-grained multi-dimensional human preference learning for image and video generation. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.21059)
 
-- ![edit] Onereward: Unified mask-guided image generation via multi-task human preference learning. [pdf](https://arxiv.org/pdf/2508.21066) 2025.08
+- ![image] Generative Universal Verifier as Multimodal Meta-Reasoner. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.13804)
 
-- ![image] ![video] RewardDance: Reward Scaling in Visual Generation. [pdf](https://arxiv.org/pdf/2509.08826) 2025.09
+- ![image] RubricRL: Simple Generalizable Rewards for Text-to-Image Generation. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20651)
 
-- ![video] VideoScore2: Think before You Score in Generative Video Evaluation. [pdf](https://arxiv.org/pdf/2509.22799) 2025.09
-
-- ![edit] Skywork unipic 2.0: Building kontext model with online rl for unified multimodal model. [pdf](https://arxiv.org/pdf/2509.04548)
-
-- ![edit] Edit-R1: Unleashing Reasoning-Based Reinforcement Learning for Image Editing. [pdf](https://openreview.net/pdf?id=hKWCGxuD5v) 2025.09
-
-- ![edit] Uniworld-V2: Reinforce Image Editing with Diffusion Negative-aware Finetuning and MLLM Implicit Feedback. [pdf](https://arxiv.org/pdf/2510.16888) 2025.10 (MLLM-as-a-judge)
-
-- ![video] Vr-thinker: Boosting video reward models through thinking-with-image reasoning. [pdf](https://arxiv.org/pdf/2510.10518). 2025.10
-
-- ![image] RubricRL: Simple Generalizable Rewards for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2511.20651) 2025.11
-
+</details>
 
 ## Diffusion-based
 
-- ![image] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization. [pdf](https://arxiv.org/pdf/2502.01051) 2025.02
+<details>
+<summary> <b> Diffusion-based Papers </b></summary>
 
-- ![video] Video Generation Models Are Good Latent Reward Models. [pdf](https://arxiv.org/pdf/2511.21541) 2025.11
+---
 
+- ![image] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.01051)
 
+- ![video] Video Generation Models Are Good Latent Reward Models. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.21541)
 
-# Training Alignment
+- ![image] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.11146)
 
-reward信号的来源：
-1. reward model；
-2. human feedback；
-3. MLLM-as-a-judge；
-4. verifiable system;
-5. implict pairs (e.g., real vs gen; curr gen vs prev gen)
-
-
-
-## ReFL
-
-- Imagereward: Learning and evaluating human preferences for text-to-image generation. [pdf](https://arxiv.org/pdf/2304.05977) 2023.04
-
-- (DRAFT) Directly Fine-Tuning Diffusion Models on Differentiable Rewards. [pdf](https://arxiv.org/abs/2309.17400) 2023.09
-
-- (AlignProp) Aligning Text-to-Image Diffusion Models with Reward Backpropagation. [pdf](https://arxiv.org/pdf/2310.03739v2) 2023.10
-
-- InstructVideo: Instructing Video Diffusion Models with Human Feedback. [pdf](https://arxiv.org/pdf/2312.12490) 2023.12
-
-- UniFL: Improve Latent Diffusion Model via Unified Feedback Learning. [pdf](https://arxiv.org/pdf/2404.05595) 2024.04
-
-- Video diffusion alignment via reward gradients. [pdf](https://arxiv.org/pdf/2407.08737) 2024.07
-
-- RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation. [pdf](https://arxiv.org/pdf/2509.16500) 2025.09
-
-
-## DPO
-
-- Diffusion Model Alignment Using Direct Preference Optimization. [pdf](https://arxiv.org/pdf/2311.12908) 2023.11
-
-- Using human feedback to fine-tune diffusion models without any reward model. [pdf](https://arxiv.org/abs/2311.13231) 2023.11
-
-
-- Self-play fine-tuning of diffusion models for text-to-image generation. [pdf](https://arxiv.org/pdf/2402.10210) 2024.02
-
-- A Dense Reward View on Aligning Text-to-Image Diffusion with Preferenc. [pdf](https://arxiv.org/pdf/2402.08265) 2024.02
-
-- Boost Your Human Image Generation Model via Direct Preference Optimization. [pdf](https://arxiv.org/pdf/2405.20216) 2024.05
-
-
-- Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization. [pdf](https://arxiv.org/pdf/2406.04314) 2024.06
-
-- Diffusion-rpo: Aligning diffusion models through relative preference optimization. [pdf](https://arxiv.org/pdf/2406.06382) 2024.06
-
-- Scalable Ranked Preference Optimization for Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2410.18013) 2024.10
-
-- PatchDPO: Patch-level DPO for Finetuning-free Personalized Image Generation. [pdf](https://arxiv.org/pdf/2412.03177) 2024.12
-
-- Align Video Diffusion Model with Online Video-Centric Preference Optimization. [pdf](https://arxiv.org/pdf/2412.15159) 2024.12
-
-- Videodpo: Omni-preference alignment for video diffusion generation. [pdf](https://arxiv.org/pdf/2412.14167) 2024.12
-
-- Improving Video Generation with Human Feedback [pdf](https://arxiv.org/pdf/2501.13918) 2025.01
-
-- Calibrated Multi-Preference Optimization for Aligning Diffusion Models. [pdf](https://arxiv.org/abs/2502.02588) 2025.02
-
-- InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment. [pdf](https://arxiv.org/pdf/2503.18454) 2025.03
-
-- Fine-Tuning Diffusion Generative Models via Rich Preference Optimization. [pdf](https://arxiv.org/pdf/2503.11720) 2025.03
-
-
-- Rethinking DPO-style Diffusion Aligning Frameworks. [pdf](https://openaccess.thecvf.com/content/ICCV2025/papers/Wu_Rethinking_DPO-style_Diffusion_Aligning_Frameworks_ICCV_2025_paper.pdf) 2025.03
-
-- Positive Enhanced Preference Alignment for Text-to-Image Models. [pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10890823&casa_token=6w7bBUPdGDMAAAAA:gWxaIXtzwGOAUWl4wEHVpBCNsxRHZqWIepc2imE1D8mqWrm9n8eA9f9oD0bo2JcboFnmRh1UDYs&tag=1)
-
-- Diffusion-npo: Negative preference optimization for better preference aligned generation of diffusion models. [pdf](https://arxiv.org/pdf/2505.11245) 2025.05
-
-- DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models. [pdf](https://arxiv.org/pdf/2506.03517) 2025.06
-
-- Hierarchical Fine-grained Preference Optimization for Physically Plausible Video Generation. [pdf](https://arxiv.org/pdf/2508.10858) 2025.08
-
-
-- Follow-Your-Preference: Towards Preference-Aligned Image Inpainting. [pdf](https://arxiv.org/pdf/2509.23082) 2025.09
-
-- Direct Discriminative Optimization: Your Likelihood-Based Visual Generative Model is Secretly a GAN Discriminator. [pdf](https://arxiv.org/pdf/2503.01103)
-
-- Diffusionnft: Online diffusion reinforcement with forward process. [pdf](https://arxiv.org/pdf/2509.16117) 2025.09
-
-- RealDPO: Real or Not Real, that is the Preference. [pdf](https://arxiv.org/pdf/2510.14955) 2025.10
-
-- Towards Better Optimization For Listwise Preference in Diffusion Models. [pdf](https://arxiv.org/pdf/2510.01540) 2025.10
-
-- Direct Diffusion Score Preference Optimization via Stepwise Contrastive Policy-Pair Supervision. [pdf](https://arxiv.org/pdf/2512.23426) 2025.12
-
-## RWR
-
-- Advantage-weighted regression: Simple and scalable off-policy reinforcement learning. [pdf](https://arxiv.org/pdf/1910.00177) 2019.10
-
-
-- Aligning text-to-image models using human feedback. [pdf](https://arxiv.org/pdf/2302.12192) 2023.02
-
-- Raft: Reward ranked finetuning for generative foundation model alignment. [pdf](https://arxiv.org/pdf/2304.06767) 2023.04
-
-- Online Reward-Weighted Fine-Tuning of Flow Matching with Wasserstein Regularization. [pdf](https://arxiv.org/abs/2502.06061) 2025.02
-
-
-- GigaVideo-1: Advancing Video Generation via Automatic Feedback with 4 GPU-Hours Fine-Tuning. [pdf](https://arxiv.org/pdf/2506.10639) 2025.06
-
-
-
-
-## RLHF
-
-- Training Diffusion Models with Reinforcement Learning. [pdf](https://arxiv.org/pdf/2305.13301) 2023.05
-
-- DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models. [pdf](https://arxiv.org/pdf/2305.16381) 2023.05
-
-
-
-## RLHF-GRPO
-
-大方向：
-1. efficiency，更快的reward增长速度，更高效的采样，更高效的优化；
-2. avid reward hacking：更diverse的采样，
-3. dense reward；step-wsie，更准确的credit assign
-
-- Flow-GRPO: Training Flow Matching Models via Online RL. [pdf](https://arxiv.org/pdf/2505.05470) 2025.05
-
-- DanceGRPO: Unleashing GRPO on Visual Generation. [pdf](https://arxiv.org/pdf/2505.07818) 2025.05
-
-- Tempflow-grpo: When timing matters for grpo in flow models. [pdf](https://arxiv.org/pdf/2508.04324) 2025.08
-
-- Pref-grpo: Pairwise preference reward-based grpo for stable text-to-image reinforcement learning. [pdf](https://arxiv.org/pdf/2508.20751) 2025.08
-
-- Coefficients-Preserving Sampling for Reinforcement Learning with Flow Matching. [pdf](https://arxiv.org/pdf/2508.20751) 2025.08
-
-- Branchgrpo: Stable and efficient grpo with structured branching in diffusion models. [pdf](https://arxiv.org/pdf/2509.06040) 2025.09
-
-
-- Reinforcement Learning with Inverse Rewards for World Model Post-training. [pdf](https://arxiv.org/pdf/2509.23958) 2025.09
-
-
-- Advantage weighted matching: Aligning rl with pretraining in diffusion models. [pdf](https://arxiv.org/pdf/2509.25050) 2025.09
-
-- Smart-GRPO: Smartly Sampling Noise for Efficient RL of Flow-Matching Models. [pdf](https://arxiv.org/pdf/2510.02654) 2025.10
-
-- Understanding Sampler Stochasticity in Training Diffusion Models for RLHF. [pdf](https://arxiv.org/pdf/2510.10767) 2025.10
-
-- G2RPO: Granular GRPO for Precise Reward in Flow Models. [pdf](https://arxiv.org/pdf/2510.01982) 2025.10
-
-- Sample By Step, Optimize By Chunk: Chunk-Level GRPO For Text-to-Image Generation. [pdf](https://arxiv.org/pdf/2510.21583) 2025.10
-
-
-- GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping. [pdf](https://arxiv.org/pdf/2510.22319) 2025.10
-
-- Reinforcing Diffusion Models by Direct Group Preference Optimization. [pdf](https://arxiv.org/pdf/2510.08425) 2025.10
-
-- Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models. [pdf](https://arxiv.org/pdf/2511.16955) 2025.11
-
-- The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation. [pdf](https://arxiv.org/pdf/2511.20256) 2025.11
-
-- ProxT2I: Efficient Reward-Guided Text-to-Image Generation via Proximal Diffusion. [pdf](https://arxiv.org/pdf/2511.18742) 2025.11
-
-- Multi-GRPO: Multi-Group Advantage Estimation for Text-to-Image Generation with Tree-Based Trajectories and Multiple Rewards. [pdf](https://arxiv.org/pdf/2512.00743) 2025.11
-
-- Data-regularized Reinforcement Learning for Diffusion Models at Scale. [pdf](https://arxiv.org/pdf/2512.04332) 2025.12
-
-- RealGen: Photorealistic Text-to-Image Generation via Detector-Guided Rewards. [pdf](https://arxiv.org/pdf/2512.00473) 2025.12
-
-
-# Inference Alignment
-
-- Universal guidance for diffusion models. [pdf](https://arxiv.org/abs/2302.07121) 2023.02
-
-- End-to-end diffusion latent optimization improves classifier guidance. [pdf](https://arxiv.org/abs/2303.13703) 2023.02
-
-- Gradient Guidance for Diffusion Models: An Optimization Perspective. [pdf](https://arxiv.org/pdf/2404.14743) 2024.04
-
-- ReNeg: Learning Negative Embedding with Reward Guidance. [pdf](https://arxiv.org/pdf/2412.19637) 2024.12
-
-- Test-time Alignment of Diffusion Models without Reward Over-optimization. [pdf](https://arxiv.org/pdf/2501.05803) 2025.01
-
-- Inference-time scaling for diffusion models beyond scaling denoising steps. [pdf](https://arxiv.org/pdf/2501.09732) 2025.01
-
-- A general framework for inference-time scaling and steering of diffusion models. [pdf](https://arxiv.org/pdf/2501.06848) 2025.01
-
-- Inference-time text-to-video alignment with diffusion latent beam search. [pdf](https://arxiv.org/pdf/2501.19252) 2025.01
-
-- Prompt-a-video: Prompt your video diffusion model via preference-aligned llm. [pdf](https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_Prompt-A-Video_Prompt_Your_Video_Diffusion_Model_via_Preference-Aligned_LLM_ICCV_2025_paper.pdf) 2024.12
-
-- Training-free guidance beyond differentiability: Scalable path steering with tree search in diffusion and flow models. [pdf](https://arxiv.org/pdf/2502.11420) 2025.02
-
-- Inference-Time Scaling for Diffusion Models
-beyond Scaling Denoising Steps. [pdf](https://arxiv.org/pdf/2501.09732) 2025.01
-
-- Dynamic Search for Inference-Time Alignment in Diffusion Models. [pdf](https://arxiv.org/pdf/2503.02039) 2025.03
-
-- Inference-time scaling for flow models via stochastic generation and rollover budget forcing. [pdf](https://arxiv.org/pdf/2503.19385) 2025.03
-
-
-- IMG: Calibrating Diffusion Models via Implicit Multimodal Guidance. [pdf](https://arxiv.org/abs/2509.26231) 2025.09
-
-- Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment. [pdf](https://arxiv.org/pdf/2510.00430) 2025.10
-
+</details>
 
 ## Others
 
-- Confronting reward overoptimization for diffusion models: A perspective of inductive and primacy biases. [pdf](https://arxiv.org/pdf/2505.19196) 2025.05
+<details>
+<summary> <b> Others Papers </b></summary>
 
-- Step-level Reward for Free in RL-based T2I Diffusion Model Fine-tuning. [pdf](https://arxiv.org/pdf/2505.19196) 2025.05
+---
 
-- Blip3o-next: Next frontier of native image generation. [pdf](https://arxiv.org/pdf/2510.15857) 2025.10
+- ![video] MIND-V: Hierarchical Video Generation for Long-Horizon Robotic Manipulation with RL-based Physical Alignment. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.06628) (V-JEPA based)
 
+</details>
+
+# Training Alignment
+
+<div align=center>
+<img src="asset/training.jpg" width="800px">
+</div>
+
+## ReFL
+
+<details>
+<summary> <b> ReFL Papers </b></summary>
+
+---
+
+- Imagereward: Learning and evaluating human preferences for text-to-image generation. [![arXiv 23.04](https://img.shields.io/badge/arXiv-23.04-b31b1b)](https://arxiv.org/abs/2304.05977)
+
+- (DRAFT) Directly Fine-Tuning Diffusion Models on Differentiable Rewards. [![arXiv 23.09](https://img.shields.io/badge/arXiv-23.09-b31b1b)](https://arxiv.org/abs/2309.17400)
+
+- (AlignProp) Aligning Text-to-Image Diffusion Models with Reward Backpropagation. [![arXiv 23.10](https://img.shields.io/badge/arXiv-23.10-b31b1b)](https://arxiv.org/abs/2310.03739v2)
+
+- InstructVideo: Instructing Video Diffusion Models with Human Feedback. [![arXiv 23.12](https://img.shields.io/badge/arXiv-23.12-b31b1b)](https://arxiv.org/abs/2312.12490)
+
+- UniFL: Improve Latent Diffusion Model via Unified Feedback Learning. [![arXiv 24.04](https://img.shields.io/badge/arXiv-24.04-b31b1b)](https://arxiv.org/abs/2404.05595)
+
+- Video diffusion alignment via reward gradients. [![arXiv 24.07](https://img.shields.io/badge/arXiv-24.07-b31b1b)](https://arxiv.org/abs/2407.08737)
+
+- RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.16500)
+
+</details>
+
+## DPO
+
+
+``` markdown
+Trends:
+1. Global preference --> step-aware preference;
+2. Denser preference signals (patch-level, frame-level);
+3. Offline DPO --> Online DPO;
+4. Emphasizes learning more from positive/negative samples;
+5. Constructing implicit preference pairs (real vs. gen, curr vs. ema, self-play);
+```
+
+<details>
+<summary> <b> DPO Papers </b></summary>
+
+---
+
+- Diffusion Model Alignment Using Direct Preference Optimization. [![arXiv 23.11](https://img.shields.io/badge/arXiv-23.11-b31b1b)](https://arxiv.org/abs/2311.12908)
+
+- Using human feedback to fine-tune diffusion models without any reward model. [![arXiv 23.11](https://img.shields.io/badge/arXiv-23.11-b31b1b)](https://arxiv.org/abs/2311.13231)
+
+- Self-play fine-tuning of diffusion models for text-to-image generation. [![arXiv 24.02](https://img.shields.io/badge/arXiv-24.02-b31b1b)](https://arxiv.org/abs/2402.10210)
+
+- A Dense Reward View on Aligning Text-to-Image Diffusion with Preference. [![arXiv 24.02](https://img.shields.io/badge/arXiv-24.02-b31b1b)](https://arxiv.org/abs/2402.08265)
+
+- Boost Your Human Image Generation Model via Direct Preference Optimization. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2405.20216) (real image as the gt);
+
+- Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization. [![arXiv 24.06](https://img.shields.io/badge/arXiv-24.06-b31b1b)](https://arxiv.org/abs/2406.04314)
+
+- Diffusion-rpo: Aligning diffusion models through relative preference optimization. [![arXiv 24.06](https://img.shields.io/badge/arXiv-24.06-b31b1b)](https://arxiv.org/abs/2406.06382)
+
+- Scalable Ranked Preference Optimization for Text-to-Image Generation. [![arXiv 24.10](https://img.shields.io/badge/arXiv-24.10-b31b1b)](https://arxiv.org/abs/2410.18013)
+rankdpo
+
+- PatchDPO: Patch-level DPO for Finetuning-free Personalized Image Generation. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.03177)
+
+- Align Video Diffusion Model with Online Video-Centric Preference Optimization. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.15159)
+
+- Videodpo: Omni-preference alignment for video diffusion generation. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.14167)
+
+- Improving Video Generation with Human Feedback [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.13918)
+
+- Calibrated Multi-Preference Optimization for Aligning Diffusion Models. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.02588)
+
+- InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.18454)
+
+- Fine-Tuning Diffusion Generative Models via Rich Preference Optimization. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.11720)
+
+- Rethinking DPO-style Diffusion Aligning Frameworks. [![CVF 25.03](https://img.shields.io/badge/CVF-25.03-b31b1b)](https://openaccess.thecvf.com/content/ICCV2025/papers/Wu_Rethinking_DPO-style_Diffusion_Aligning_Frameworks_ICCV_2025_paper.pdf)
+
+- Positive Enhanced Preference Alignment for Text-to-Image Models. [![IEEE](https://img.shields.io/badge/IEEE-b31b1b)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10890823&casa_token=6w7bBUPdGDMAAAAA:gWxaIXtzwGOAUWl4wEHVpBCNsxRHZqWIepc2imE1D8mqWrm9n8eA9f9oD0bo2JcboFnmRh1UDYs&tag=1)
+optimize positive
+
+- Diffusion-npo: Negative preference optimization for better preference aligned generation of diffusion models. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.11245)
+
+- DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models. [![arXiv 25.06](https://img.shields.io/badge/arXiv-25.06-b31b1b)](https://arxiv.org/abs/2506.03517)
+
+- Hierarchical Fine-grained Preference Optimization for Physically Plausible Video Generation. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.10858)
+
+
+- Follow-Your-Preference: Towards Preference-Aligned Image Inpainting. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.23082)
+
+
+- Direct Discriminative Optimization: Your Likelihood-Based Visual Generative Model is Secretly a GAN Discriminator. [![arXiv](https://img.shields.io/badge/arXiv-b31b1b)](https://arxiv.org/abs/2503.01103)
+
+
+- Diffusionnft: Online diffusion reinforcement with forward process. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.16117)
+
+- RealDPO: Real or Not Real, that is the Preference. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.14955)
+
+- Towards Better Optimization For Listwise Preference in Diffusion Models. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.01540)
+
+- Direct Diffusion Score Preference Optimization via Stepwise Contrastive Policy-Pair Supervision. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.23426)
+
+- PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.24551)
+
+- Mind the Generative Details: Direct Localized Detail Preference Optimization for Video Diffusion Models. [![arXiv 26.01](https://img.shields.io/badge/arXiv-26.01-b31b1b)](https://arxiv.org/abs/2601.04068)
+
+</details>
+
+## RWR
+
+<details>
+<summary> <b> RWR Papers </b></summary>
+
+---
+
+- Advantage-weighted regression: Simple and scalable off-policy reinforcement learning. [![arXiv 19.10](https://img.shields.io/badge/arXiv-19.10-b31b1b)](https://arxiv.org/abs/1910.00177)
+
+- Aligning text-to-image models using human feedback. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2302.12192)
+
+- Raft: Reward ranked finetuning for generative foundation model alignment. [![arXiv 23.04](https://img.shields.io/badge/arXiv-23.04-b31b1b)](https://arxiv.org/abs/2304.06767)
+
+- Online Reward-Weighted Fine-Tuning of Flow Matching with Wasserstein Regularization. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.06061)
+
+- GigaVideo-1: Advancing Video Generation via Automatic Feedback with 4 GPU-Hours Fine-Tuning. [![arXiv 25.06](https://img.shields.io/badge/arXiv-25.06-b31b1b)](https://arxiv.org/abs/2506.10639)
+
+</details>
+
+## RLHF
+
+<details>
+<summary> <b> RLHF Papers </b></summary>
+
+---
+
+- Optimizing ddpm sampling with shortcut fine-tuning。 [![arXiv 23.01](https://img.shields.io/badge/arXiv-23.01-b31b1b)](https://arxiv.org/abs/2301.13362)
+
+- Training Diffusion Models with Reinforcement Learning. [![arXiv 23.05](https://img.shields.io/badge/arXiv-23.05-b31b1b)](https://arxiv.org/abs/2305.13301)
+
+- DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models. [![arXiv 23.05](https://img.shields.io/badge/arXiv-23.05-b31b1b)](https://arxiv.org/abs/2305.16381)
+
+- Training Diffusion Models Towards Diverse Image Generation with Reinforcement Learning. [![arXiv 23.11](https://img.shields.io/badge/arXiv-23.11-b31b1b)](https://arxiv.org/abs/2305.13301v4)
+
+- A Simple and Effective Reinforcement Learning Method for Text-to-Image Diffusion Fine-tuning. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.00897)
+
+</details>
+
+## RLHF-GRPO
+
+``` markdown
+Trends:
+1. Efficiency: sample efficiency, optimization efficiency (like sparse-step updates), faster reward acquisition；
+2. Avid reward hacking, like stronger trust-region control and improved sampling diversity;
+3. Dense reward signals, precise credit assign;
+4. Support for diverse reward functions, including verifiers and pairwise comparisons;
+```
+
+<details>
+<summary> <b> RLHF-GRPO Papers </b></summary>
+
+---
+
+- Flow-GRPO: Training Flow Matching Models via Online RL. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.05470)
+
+- DanceGRPO: Unleashing GRPO on Visual Generation. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.07818)
+
+- Tempflow-grpo: When timing matters for grpo in flow models. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.04324)
+
+- Pref-grpo: Pairwise preference reward-based grpo for stable text-to-image reinforcement learning. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.20751)
+
+- Coefficients-Preserving Sampling for Reinforcement Learning with Flow Matching. [![arXiv 25.08](https://img.shields.io/badge/arXiv-25.08-b31b1b)](https://arxiv.org/abs/2508.20751)
+
+- Branchgrpo: Stable and efficient grpo with structured branching in diffusion models. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.06040)
+
+- Reinforcement Learning with Inverse Rewards for World Model Post-training. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.23958)
+
+- Advantage weighted matching: Aligning rl with pretraining in diffusion models. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.25050)
+
+- Smart-GRPO: Smartly Sampling Noise for Efficient RL of Flow-Matching Models. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.02654)
+
+- Understanding Sampler Stochasticity in Training Diffusion Models for RLHF. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.10767)
+
+- G2RPO: Granular GRPO for Precise Reward in Flow Models. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.01982)
+
+- Sample By Step, Optimize By Chunk: Chunk-Level GRPO For Text-to-Image Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.21583)
+
+- GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.22319)
+
+- Reinforcing Diffusion Models by Direct Group Preference Optimization. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.08425)
+
+- Seeing What Matters: Visual Preference Policy Optimization for Visual Generation. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.18719)
+
+- Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.16955)
+
+- The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20256)
+
+- ProxT2I: Efficient Reward-Guided Text-to-Image Generation via Proximal Diffusion. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.18742)
+
+- Multi-GRPO: Multi-Group Advantage Estimation for Text-to-Image Generation with Tree-Based Trajectories and Multiple Rewards. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2512.00743)
+
+- Data-regularized Reinforcement Learning for Diffusion Models at Scale. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.04332)
+
+- RealGen: Photorealistic Text-to-Image Generation via Detector-Guided Rewards. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.00473)
+
+- GARDO: Reinforcing Diffusion Models without Reward Hacking. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.24138)
+
+- Beyond the Dirac Delta: Mitigating Diversity Collapse in Reinforcement Fine-Tuning for Versatile Image Generation. [![arXiv 26.01](https://img.shields.io/badge/arXiv-26.01-b31b1b)](https://arxiv.org/abs/2601.12401)
+
+- Diffusion Alignment Beyond KL: Variance Minimisation as Effective Policy Optimiser. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.12229)
+
+- UniRef-Image-Edit: Towards Scalable and Consistent Multi-Reference Image Editing. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.14186)
+
+</details>
+
+# Inference Alignment
+
+## Gradient Guidance
+
+<details>
+<summary> <b> Gradient Guidance Papers </b></summary>
+
+---
+
+- Universal guidance for diffusion models. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2302.07121)
+
+- End-to-end diffusion latent optimization improves classifier guidance. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2303.13703)
+
+- Gradient Guidance for Diffusion Models: An Optimization Perspective. [![arXiv 24.04](https://img.shields.io/badge/arXiv-24.04-b31b1b)](https://arxiv.org/abs/2404.14743)
+
+- Reno: Enhancing one-step text-to-image models through reward-based noise optimization. [![arXiv 24.06](https://img.shields.io/badge/arXiv-24.06-b31b1b)](https://arxiv.org/abs/2406.04312)
+
+- Not all noises are created equally: Diffusion noise selection and optimization. [![arXiv 24.07](https://img.shields.io/badge/arXiv-24.07-b31b1b)](https://arxiv.org/abs/2407.14041)
+
+- Golden noise for diffusion models: A learning framework. [![arXiv 24.11](https://img.shields.io/badge/arXiv-24.11-b31b1b)](https://arxiv.org/abs/2411.09502)
+
+- A noise is worth diffusion guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.03895)
+
+</details>
+
+## Condition
+
+<details>
+<summary> <b> Condition Papers </b></summary>
+
+---
+
+- ReNeg: Learning Negative Embedding with Reward Guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.19637)
+
+- Prompt-a-video: Prompt your video diffusion model via preference-aligned llm. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.15156)
+
+- IMG: Calibrating Diffusion Models via Implicit Multimodal Guidance. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.26231)
+
+- Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.00430)
+
+</details>
+
+## Search
+
+<details>
+<summary> <b> Search Papers </b></summary>
+
+---
+
+- Test-time Alignment of Diffusion Models without Reward Over-optimization. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.05803)
+
+- Inference-time scaling for diffusion models beyond scaling denoising steps. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.09732)
+
+- A general framework for inference-time scaling and steering of diffusion models. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.06848)
+
+- Inference-time text-to-video alignment with diffusion latent beam search. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.19252)
+
+- Training-free guidance beyond differentiability: Scalable path steering with tree search in diffusion and flow models. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.11420)
+
+- Dynamic Search for Inference-Time Alignment in Diffusion Models. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.02039)
+
+- Inference-time scaling for flow models via stochastic generation and rollover budget forcing. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.19385)
+
+- Scaling image and video generation via test-time evolutionary search. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.17618)
+
+</details>
 
 # Download Tasks
 
 ## Human-centric AI & ID Preserving
 
-- Identity-preserving image-to-video generation via reward-guided optimization. [pdf](https://arxiv.org/pdf/2510.14255) 2025.10
+<details>
+<summary> <b> Human-centric AI & ID Preserving Papers </b></summary>
 
-- Disco: Reinforcement with diversity constraints for multi-human generation. [pdf](https://arxiv.org/pdf/2510.01399) 2025.10
+---
 
-- PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards. [pdf](https://arxiv.org/pdf/2512.01236) 2025.12
+- Identity-preserving image-to-video generation via reward-guided optimization. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.14255)
 
+- Disco: Reinforcement with diversity constraints for multi-human generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.01399)
+
+- PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.01236)
+
+</details>
 
 ## Control
 
-- Itercomp: Iterative composition-aware feedback learning from model gallery for text-to-image generation. [pdf](https://arxiv.org/pdf/2410.07171) 2024.10
+<details>
+<summary> <b> Control Papers </b></summary>
 
-- Taming Camera-Controlled Video Generation with Verifiable Geometry Reward. [pdf](https://arxiv.org/pdf/2512.02870) 2025.12
+---
 
+- Itercomp: Iterative composition-aware feedback learning from model gallery for text-to-image generation. [![arXiv 24.10](https://img.shields.io/badge/arXiv-24.10-b31b1b)](https://arxiv.org/abs/2410.07171)
+
+- Taming Camera-Controlled Video Generation with Verifiable Geometry Reward. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.02870)
+
+</details>
 
 ## Long Video Generation
+
+<details>
+<summary> <b> Long Video Generation Papers </b></summary>
+
+---
+
 - Self-Forcing++: Towards Minute-Scale High-Quality
-Video Generation. [pdf](https://arxiv.org/pdf/2510.02283) 2025.10
+Video Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.02283)
 
-- Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation. [pdf](https://arxiv.org/pdf/2512.04678) 2025.12
+- Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.04678)
 
+</details>
 
 ## Distillation
 
-- Distribution Matching Distillation Meets Reinforcement Learning. [pdf](https://arxiv.org/pdf/2511.13649) 2025.11
+<details>
+<summary> <b> Distillation Papers </b></summary>
 
-- Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning. [pdf](https://arxiv.org/pdf/2511.20549) 2025.11
+---
+
+- Distribution Matching Distillation Meets Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.13649)
+
+- Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20549)
+
+</details>
 
 ## 3D
 
-- Dreamreward: Text-to-3d generation with human preference. [pdf](https://arxiv.org/pdf/2403.14613) 2024.03
+<details>
+<summary> <b> 3D Papers </b></summary>
 
+---
 
-- DreamDPO: Aligning Text-to-3D Generation with Human Preferences via Direct Preference Optimization. [pdf](https://arxiv.org/abs/2502.04370) 2025.02
+- Dreamreward: Text-to-3d generation with human preference. [![arXiv 24.03](https://img.shields.io/badge/arXiv-24.03-b31b1b)](https://arxiv.org/abs/2403.14613)
 
-- Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation. [pdf](https://arxiv.org/pdf/2512.10949) 2025.12
+- DreamDPO: Aligning Text-to-3D Generation with Human Preferences via Direct Preference Optimization. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.04370)
+
+- Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.10949)
+
+</details>
 
 
 [DPO]: https://img.shields.io/badge/-DPO-blue
@@ -399,3 +591,10 @@ Video Generation. [pdf](https://arxiv.org/pdf/2510.02283) 2025.10
 [image]: https://img.shields.io/badge/-Image-blue
 [video]: https://img.shields.io/badge/-Video-success
 [edit]: https://img.shields.io/badge/-Edit-orange
+
+
+
+## Contact
+
+For any questions, suggestions or discussions, please feel free ti reach out to [me](https://gongyeliu.github.io/) at `gongyeliuu@gmail.com`.
+
