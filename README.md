@@ -189,14 +189,12 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 ### 3.2 DPO
 
-
 > **Key Trends**:
 > 1. Global preference --> step-aware preference;
 > 2. Denser preference signals (patch-level, frame-level);
 > 3. Offline DPO --> Online DPO;
 > 4. Emphasizes learning more from positive/negative samples;
 > 5. Constructing implicit preference pairs (real vs. gen, curr vs. ema, self-play);
-
 
 - Diffusion Model Alignment Using Direct Preference Optimization. [![arXiv 23.11](https://img.shields.io/badge/arXiv-23.11-b31b1b)](https://arxiv.org/abs/2311.12908)
 
@@ -289,7 +287,6 @@ optimize positive
 > 3. Dense reward signals, precise credit assign;
 > 4. Support for diverse reward functions, including verifiers and pairwise comparisons;
 
-
 - Flow-GRPO: Training Flow Matching Models via Online RL. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.05470)
 
 - DanceGRPO: Unleashing GRPO on Visual Generation. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.07818)
@@ -344,6 +341,9 @@ optimize positive
 
 ### 4.1 Gradient Guidance
 
+<details>
+<summary> <b> Paper List </b></summary>
+
 - Universal guidance for diffusion models. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2302.07121)
 
 - End-to-end diffusion latent optimization improves classifier guidance. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2303.13703)
@@ -358,7 +358,12 @@ optimize positive
 
 - A noise is worth diffusion guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.03895)
 
+</details>
+
 ### 4.2 Condition
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - ReNeg: Learning Negative Embedding with Reward Guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.19637)
 
@@ -368,7 +373,12 @@ optimize positive
 
 - Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.00430)
 
+</details>
+
 ### 4.3 Search
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Test-time Alignment of Diffusion Models without Reward Over-optimization. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.05803)
 
@@ -386,9 +396,14 @@ optimize positive
 
 - Scaling image and video generation via test-time evolutionary search. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.17618)
 
+</details>
+
 ## 5 Download Tasks
 
 ### 5.1 Human-centric AI & ID Preserving
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Identity-preserving image-to-video generation via reward-guided optimization. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.14255)
 
@@ -396,26 +411,50 @@ optimize positive
 
 - PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.01236)
 
+</details>
+
 ### 5.2 Control
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Itercomp: Iterative composition-aware feedback learning from model gallery for text-to-image generation. [![arXiv 24.10](https://img.shields.io/badge/arXiv-24.10-b31b1b)](https://arxiv.org/abs/2410.07171)
 
 - Taming Camera-Controlled Video Generation with Verifiable Geometry Reward. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.02870)
 
+</details>
+
+
 ### 5.3 Long Video Generation
+
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Self-Forcing++: Towards Minute-Scale High-Quality
 Video Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.02283)
 
 - Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.04678)
 
+</details>
+
+
 ### 5.4 Distillation
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Distribution Matching Distillation Meets Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.13649)
 
 - Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20549)
 
+</details>
+
+
 ### 5.5 3D
+
+<details>
+<summary> <b> Paper List </b></summary>
 
 - Dreamreward: Text-to-3d generation with human preference. [![arXiv 24.03](https://img.shields.io/badge/arXiv-24.03-b31b1b)](https://arxiv.org/abs/2403.14613)
 
@@ -423,10 +462,12 @@ Video Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1
 
 - Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.10949)
 
-## 7 Contact & Contributions
+</details>
 
-For any questions, suggestions or discussions, please feel free ti reach out to [me](https://gongyeliu.github.io/) at `gongyeliuu@gmail.com`.
 
+## 6 Contact & Contributions
+
+For any questions, suggestions or discussions, please feel free to reach out to [me](https://gongyeliu.github.io/) at `gongyeliuu@gmail.com`.
 
 [DPO]: https://img.shields.io/badge/-DPO-blue
 [GRPO]: https://img.shields.io/badge/-GRPO-success
