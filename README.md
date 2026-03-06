@@ -36,9 +36,9 @@ This repository is updated continuously. We apologize for any omissions and welc
 
 ---
 
-# 1 Foundation Models
+## 1 Foundation Models
 
-## 1.1 Image Generation & Editing
+### 1.1 Image Generation & Editing
 
 - ![DPO] Scaling Rectified Flow Transformers for High-Resolution Image Synthesis. [![arXiv 24.03](https://img.shields.io/badge/arXiv-24.03-b31b1b)](https://arxiv.org/abs/2403.03206) (StableDiffusion 3 from Stability AI).
 
@@ -61,7 +61,7 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - ![SFT] ![DPO] ![GRPO] LongCat-Image Technical Report [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.07584) (from Meituan LongCat Team)
 
-## 1.2 Video Generation
+### 1.2 Video Generation
 
 - ![ReFL] T2v-turbo: Breaking the quality bottleneck of video consistency model with mixed reward feedback. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2405.18750)
 
@@ -85,13 +85,13 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - ![SFT] ![ReFL] ![GRPO] Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.13507) (from ByteDance Seed Team)
 
-# 2 Reward Model
+## 2 Reward Model
 
 <div align=center>
 <img src="asset/reward.jpg" width="400px">
 </div>
 
-## 2.1 CLIP-based
+### 2.1 CLIP-based
 
 - ![image] Laion-5b: An open large-scale dataset for training next generation image-text models. [![arXiv 22.10](https://img.shields.io/badge/arXiv-22.10-b31b1b)](https://arxiv.org/abs/2210.08402)
 
@@ -107,7 +107,7 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - ![image] Learning Multi-dimensional Human Preference for Text-to-Image Generation. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2405.14705)
 
-## 2.2 VLM-based
+### 2.2 VLM-based
 
 - ![image] Multimodal Large Language Models Make Text-to-Image Generative Models Align Better. [![arXiv 24.05](https://img.shields.io/badge/arXiv-24.05-b31b1b)](https://arxiv.org/abs/2404.15100)
 
@@ -153,7 +153,7 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - ![image] RubricRL: Simple Generalizable Rewards for Text-to-Image Generation. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20651)
 
-## 2.3 Diffusion-based
+### 2.3 Diffusion-based
 
 - ![image] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization. [![arXiv 25.02](https://img.shields.io/badge/arXiv-25.02-b31b1b)](https://arxiv.org/abs/2502.01051)
 
@@ -161,17 +161,17 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - ![image] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.11146)
 
-## 2.4 Others
+### 2.4 Others
 
 - ![video] MIND-V: Hierarchical Video Generation for Long-Horizon Robotic Manipulation with RL-based Physical Alignment. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.06628) (V-JEPA based)
 
-# 3 Training Alignment
+## 3 Training Alignment
 
 <div align=center>
 <img src="asset/training.jpg" width="800px">
 </div>
 
-## 3.1 ReFL
+### 3.1 ReFL
 
 - Imagereward: Learning and evaluating human preferences for text-to-image generation. [![arXiv 23.04](https://img.shields.io/badge/arXiv-23.04-b31b1b)](https://arxiv.org/abs/2304.05977)
 
@@ -187,16 +187,16 @@ Model with Sparse Diffusion Transformer. [![arXiv 25.05](https://img.shields.io/
 
 - RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation. [![arXiv 25.09](https://img.shields.io/badge/arXiv-25.09-b31b1b)](https://arxiv.org/abs/2509.16500)
 
-## 3.2 DPO
+### 3.2 DPO
 
-``` markdown
-Trends:
-1. Global preference --> step-aware preference;
-2. Denser preference signals (patch-level, frame-level);
-3. Offline DPO --> Online DPO;
-4. Emphasizes learning more from positive/negative samples;
-5. Constructing implicit preference pairs (real vs. gen, curr vs. ema, self-play);
-```
+
+> **Key Trends**:
+> 1. Global preference --> step-aware preference;
+> 2. Denser preference signals (patch-level, frame-level);
+> 3. Offline DPO --> Online DPO;
+> 4. Emphasizes learning more from positive/negative samples;
+> 5. Constructing implicit preference pairs (real vs. gen, curr vs. ema, self-play);
+
 
 - Diffusion Model Alignment Using Direct Preference Optimization. [![arXiv 23.11](https://img.shields.io/badge/arXiv-23.11-b31b1b)](https://arxiv.org/abs/2311.12908)
 
@@ -256,7 +256,7 @@ optimize positive
 
 - Mind the Generative Details: Direct Localized Detail Preference Optimization for Video Diffusion Models. [![arXiv 26.01](https://img.shields.io/badge/arXiv-26.01-b31b1b)](https://arxiv.org/abs/2601.04068)
 
-## 3.3 RWR
+### 3.3 RWR
 
 - Advantage-weighted regression: Simple and scalable off-policy reinforcement learning. [![arXiv 19.10](https://img.shields.io/badge/arXiv-19.10-b31b1b)](https://arxiv.org/abs/1910.00177)
 
@@ -268,9 +268,9 @@ optimize positive
 
 - GigaVideo-1: Advancing Video Generation via Automatic Feedback with 4 GPU-Hours Fine-Tuning. [![arXiv 25.06](https://img.shields.io/badge/arXiv-25.06-b31b1b)](https://arxiv.org/abs/2506.10639)
 
-## 3.4 RLHF
+### 3.4 RLHF
 
-- Optimizing ddpm sampling with shortcut fine-tuning。 [![arXiv 23.01](https://img.shields.io/badge/arXiv-23.01-b31b1b)](https://arxiv.org/abs/2301.13362)
+- Optimizing ddpm sampling with shortcut fine-tuning. [![arXiv 23.01](https://img.shields.io/badge/arXiv-23.01-b31b1b)](https://arxiv.org/abs/2301.13362)
 
 - Training Diffusion Models with Reinforcement Learning. [![arXiv 23.05](https://img.shields.io/badge/arXiv-23.05-b31b1b)](https://arxiv.org/abs/2305.13301)
 
@@ -280,15 +280,15 @@ optimize positive
 
 - A Simple and Effective Reinforcement Learning Method for Text-to-Image Diffusion Fine-tuning. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.00897)
 
-## 3.5 RLHF-GRPO
+### 3.5 RLHF-GRPO
 
-``` markdown
-Trends:
-1. Efficiency: sample efficiency, optimization efficiency (like sparse-step updates), faster reward acquisition；
-2. Avid reward hacking, like stronger trust-region control and improved sampling diversity;
-3. Dense reward signals, precise credit assign;
-4. Support for diverse reward functions, including verifiers and pairwise comparisons;
-```
+> **Key Trends**
+> 
+> 1. Efficiency: sample efficiency, optimization efficiency (like sparse-step updates), faster reward acquisition；
+> 2. Avid reward hacking, like stronger trust-region control and improved sampling diversity;
+> 3. Dense reward signals, precise credit assign;
+> 4. Support for diverse reward functions, including verifiers and pairwise comparisons;
+
 
 - Flow-GRPO: Training Flow Matching Models via Online RL. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.05470)
 
@@ -340,9 +340,9 @@ Trends:
 
 - UniRef-Image-Edit: Towards Scalable and Consistent Multi-Reference Image Editing. [![arXiv 26.02](https://img.shields.io/badge/arXiv-26.02-b31b1b)](https://arxiv.org/abs/2602.14186)
 
-# 4 Inference Alignment
+## 4 Inference Alignment
 
-## 4.1 Gradient Guidance
+### 4.1 Gradient Guidance
 
 - Universal guidance for diffusion models. [![arXiv 23.02](https://img.shields.io/badge/arXiv-23.02-b31b1b)](https://arxiv.org/abs/2302.07121)
 
@@ -358,7 +358,7 @@ Trends:
 
 - A noise is worth diffusion guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.03895)
 
-## 4.2 Condition
+### 4.2 Condition
 
 - ReNeg: Learning Negative Embedding with Reward Guidance. [![arXiv 24.12](https://img.shields.io/badge/arXiv-24.12-b31b1b)](https://arxiv.org/abs/2412.19637)
 
@@ -368,7 +368,7 @@ Trends:
 
 - Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.00430)
 
-## 4.3 Search
+### 4.3 Search
 
 - Test-time Alignment of Diffusion Models without Reward Over-optimization. [![arXiv 25.01](https://img.shields.io/badge/arXiv-25.01-b31b1b)](https://arxiv.org/abs/2501.05803)
 
@@ -386,9 +386,9 @@ Trends:
 
 - Scaling image and video generation via test-time evolutionary search. [![arXiv 25.05](https://img.shields.io/badge/arXiv-25.05-b31b1b)](https://arxiv.org/abs/2505.17618)
 
-# 5 Download Tasks
+## 5 Download Tasks
 
-## 5.1 Human-centric AI & ID Preserving
+### 5.1 Human-centric AI & ID Preserving
 
 - Identity-preserving image-to-video generation via reward-guided optimization. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.14255)
 
@@ -396,26 +396,26 @@ Trends:
 
 - PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.01236)
 
-## 5.2 Control
+### 5.2 Control
 
 - Itercomp: Iterative composition-aware feedback learning from model gallery for text-to-image generation. [![arXiv 24.10](https://img.shields.io/badge/arXiv-24.10-b31b1b)](https://arxiv.org/abs/2410.07171)
 
 - Taming Camera-Controlled Video Generation with Verifiable Geometry Reward. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.02870)
 
-## 5.3 Long Video Generation
+### 5.3 Long Video Generation
 
 - Self-Forcing++: Towards Minute-Scale High-Quality
 Video Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1b)](https://arxiv.org/abs/2510.02283)
 
 - Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.04678)
 
-## 5.4 Distillation
+### 5.4 Distillation
 
 - Distribution Matching Distillation Meets Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.13649)
 
 - Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning. [![arXiv 25.11](https://img.shields.io/badge/arXiv-25.11-b31b1b)](https://arxiv.org/abs/2511.20549)
 
-## 5.5 3D
+### 5.5 3D
 
 - Dreamreward: Text-to-3d generation with human preference. [![arXiv 24.03](https://img.shields.io/badge/arXiv-24.03-b31b1b)](https://arxiv.org/abs/2403.14613)
 
@@ -423,7 +423,7 @@ Video Generation. [![arXiv 25.10](https://img.shields.io/badge/arXiv-25.10-b31b1
 
 - Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation. [![arXiv 25.12](https://img.shields.io/badge/arXiv-25.12-b31b1b)](https://arxiv.org/abs/2512.10949)
 
-# 7 Contact & Contributions
+## 7 Contact & Contributions
 
 For any questions, suggestions or discussions, please feel free ti reach out to [me](https://gongyeliu.github.io/) at `gongyeliuu@gmail.com`.
 
