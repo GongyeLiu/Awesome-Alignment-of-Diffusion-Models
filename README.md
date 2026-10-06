@@ -278,6 +278,8 @@ optimize positive
 
 - A Simple and Effective Reinforcement Learning Method for Text-to-Image Diffusion Fine-tuning. [![arXiv 25.03](https://img.shields.io/badge/arXiv-25.03-b31b1b)](https://arxiv.org/abs/2503.00897)
 
+- MEND: RL For Flow Models via Proximal Velocity Matching. [![arXiv 26.10](https://img.shields.io/badge/arXiv-26.10-b31b1b)](https://arxiv.org/abs/2610.05954)
+
 ### 3.5 RLHF-GRPO
 
 > **Key Trends**
